@@ -51,6 +51,6 @@ Para ver o site funcionando na sua máquina, siga os passos abaixo:
 
 ## 👨‍🎓 Autor
 
-Desenvolvido por **[Seu Nome Aqui]**
-*Aluno do 1º Ano do Ensino Médio*
+Desenvolvido por **Lara Vitória Alves Chiaretto**
+*Aluno do 1º Ano do Ensino Médio A do Colégio Estadual Souza Naves - Rolândia-PR*
 *Projeto Agrinho 2026 - Paraná*
