@@ -1,0 +1,253 @@
+/* ==========================================================================
+   1. RESET E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Variáveis de cores para facilitar a organização */
+:root {
+    --cor-primaria: #1b5e20;     /* Verde escuro (campo/natureza) */
+    --cor-secundaria: #2e7d32;   /* Verde intermediário */
+    --cor-acento: #00e676;       /* Verde brilhante/neon (tecnologia) */
+    --cor-fundo: #f4f7f5;        /* Cinza bem claro com toque verde */
+    --cor-texto: #263238;        /* Grafite escuro para leitura confortável */
+    --cor-card: #ffffff;         /* Branco puro para os blocos */
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO E MENU DE NAVEGAÇÃO
+   ========================================================================== */
+header {
+    background-color: var(--cor-primaria);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    position: sticky; /* Faz o menu ficar fixo no topo ao rolar a página */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+header .logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse nos links do menu */
+nav ul li a:hover {
+    color: var(--cor-acento);
+}
+
+/* ==========================================================================
+   3. CONTEÚDO PRINCIPAL E SEÇÕES
+   ========================================================================== */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section {
+    margin-bottom: 60px;
+    padding: 20px;
+}
+
+/* Estilo padrão para os títulos das seções */
+h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 25px;
+    font-size: 2rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Linha decorativa abaixo dos títulos h2 */
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--cor-acento);
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   4. SEÇÃO HERO (INTRODUÇÃO)
+   ========================================================================== */
+.hero {
+    background: linear-gradient(135deg, var(--cor-primaria), #0d3c11);
+    color: white;
+    border-radius: 15px;
+    padding: 50px 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero h2 {
+    color: white;
+}
+
+.hero h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--cor-acento);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 20px auto 0 auto;
+}
+
+.hero strong {
+    color: var(--cor-acento);
+}
+
+/* ==========================================================================
+   5. GRID DE CARDS (TECNOLOGIAS)
+   ========================================================================== */
+.cards-container {
+    display: grid;
+    /* Cria colunas automáticas que se ajustam ao tamanho da tela */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: var(--cor-card);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--cor-secundaria);
+}
+
+/* Efeito de "levitar" ao passar o mouse no card */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+/* ==========================================================================
+   6. SUSTENTABILIDADE E SOBRE
+   ========================================================================== */
+#sustentabilidade ul {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+#sustentabilidade ul li {
+    margin-bottom: 12px;
+    list-style: none;
+    position: relative;
+    padding-left: 25px;
+}
+
+/* Ícone personalizado antes de cada item da lista */
+#sustentabilidade ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#sobre {
+    background-color: #e8f5e9; /* Fundo esverdeado bem suave */
+    border-radius: 10px;
+    border-left: 6px solid var(--cor-primaria);
+}
+
+/* ==========================================================================
+   7. RODAPÉ E BOTÃO DE VOLTAR AO TOPO
+   ========================================================================== */
+footer {
+    background-color: #263238;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+}
+
+#btnTopo {
+    background-color: var(--cor-secundaria);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+#btnTopo:hover {
+    background-color: var(--cor-acento);
+    color: var(--cor-texto);
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   8. RESPONSIVIDADE (Telas menores / Celulares)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 30px 20px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+}
